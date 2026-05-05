@@ -147,8 +147,7 @@ async function exchangeCodeForToken(
 }
 
 export async function authenticateAgent(scopes?: string): Promise<string> {
-  const orgName = process.env.ORGANIZATION_NAME || '';
-  const baseUrl = `https://api.asgardeo.io/t/${orgName}`;
+  const baseUrl = process.env.baseUrl || '';
   const clientId = process.env.CLIENT_ID || '';
   const redirectUri = process.env.REDIRECT_URI || '';
   const agentId = process.env.AGENT_ID || '';
